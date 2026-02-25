@@ -34,7 +34,7 @@ El proyecto está diseñado para que **funcione al 100% sin errores** si sigues 
 ### 1️⃣ Clona el repositorio
 
 ```bash
-git clone https://github.com/deimergarcia/prueba-tecnica-django.git  
+git clone https://github.com/deimergarcia/prueba-tecnica-django.git
 cd prueba-tecnica-django
 ```
 
@@ -89,11 +89,14 @@ Cuando te pregunte si quieres crear el archivo, di **Sí**.
 * Abre la carpeta del proyecto.
 * Crea un nuevo archivo llamado `.env`.
 
-Ahora, copia y pega exactamente esto dentro del archivo `.env`:
+Ahora, copia y pega exactamente esto dentro del archivo .env:
 
 ```
-DATABASE_URL=postgresql://deimer_owner:ZdX5Lp9uQ2aV@ep-crimson-math-a5b6c7d8.us-east-2.aws.neon.tech:5432/crm_prueba_db
+DATABASE_URL='postgresql://neondb_owner:CONTRASEÑA@ep-billowing-block-ai93hih4-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+
 ```
+
+Reemplaza donde dice CONTRASEÑA por la contraseña enviada por correo.
 
 Guarda y cierra el archivo.
 
