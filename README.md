@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Prueba Técnica – Desarrollador Python (Django)
 
 Proyecto CRM desarrollado por **Deimer Garcia** para el proceso de selección técnico.
@@ -32,14 +31,9 @@ El proyecto está diseñado para que **funcione al 100% sin errores** si sigues 
 Abre tu terminal (CMD, PowerShell o Terminal) y ejecuta:
 
 ```bash
-git clone https://github.com/deimergarcia/prueba-tecnica-django.git
+git clone https://github.com/deimergarcia/prueba-tecnica-django.git  
 cd prueba-tecnica-django
 ```
-
-> Si no tienes Git, ve a:  
-> 🔗 [https://github.com/deimergarcia/prueba-tecnica-django](https://github.com/deimergarcia/prueba-tecnica-django)  
-> Haz clic en **"Code" → "Download ZIP"**  
-> Extrae la carpeta y abre una terminal dentro de ella.
 
 ---
 
@@ -100,10 +94,10 @@ DATABASE_URL=postgresql://deimer_owner:ZdX5Lp9uQ2aV@ep-crimson-math-a5b6c7d8.us-
 
 Guarda y cierra el archivo.
 
-> 🔐 Esta es una base de datos PostgreSQL en la nube (Neon.tech), creada exclusivamente para esta prueba.
-> - No necesitas registrarte.
-> - Ya tiene la estructura de tablas lista.
-> - Es temporal y será desactivada después del proceso.
+> 🔐 Esta es una base de datos temporal que he configurado exclusivamente para esta prueba técnica.
+> - No necesitas registrarte ni instalar PostgreSQL.
+> - La base de datos contiene estructura inicial lista para usar.
+> - Este acceso será desactivado después del proceso de selección.
 
 ---
 
@@ -213,11 +207,4 @@ La aplicación consume la API oficial de ciudades de Colombia:
 
 ## 🎯 Autor
 
-**Deimer Garcia**  
-
----
-
-> Esta prueba técnica está lista para evaluación.  
-> Todo funciona con un solo comando después de la configuración inicial.  
-> Cumple con todos los criterios de evaluación.
-```
+**Deimer Garcia**

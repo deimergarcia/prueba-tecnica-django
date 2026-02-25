@@ -10,9 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import os
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qsl
 from pathlib import Path
 from decouple import config
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,20 +81,18 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Obtenemos la URL de conexión desde una variable de entorno
 DATABASE_URL = config('DATABASE_URL', default='postgresql://dummy:dummy@localhost:5432/dummy')
 
-# Parseamos la URL
-url = urlparse(DATABASE_URL)
+# Replace the DATABASES section of your settings.py with this
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': url.path[1:],           # Nombre de la DB (sin la barra inicial)
-        'USER': url.username,           # Usuario
-        'PASSWORD': url.password,       # Contraseña
-        'HOST': url.hostname,           # Host
-        'PORT': url.port or 5432,       # Puerto
-        'OPTIONS': {
-            'sslmode': 'require',        # Neon requiere SSL
-        },
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
+        'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
     }
 }
 
