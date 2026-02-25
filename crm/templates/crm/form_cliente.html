@@ -1,0 +1,42 @@
+{% extends 'crm/base.html' %}
+
+{% block title %}{{ titulo }}{% endblock %}
+
+{% block content %}
+<h2>{{ titulo }}</h2>
+
+{% if error_api %}
+<div class="alert alert-warning">
+    {{ error_api }} Puedes ingresar la ciudad manualmente.
+</div>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Nombre completo *</label>
+        {{ form.nombre_completo }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Empresa</label>
+        {{ form.empresa }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Correo electrónico *</label>
+        {{ form.correo }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Teléfono</label>
+        {{ form.telefono }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ciudad</label>
+        {{ form.ciudad }}
+        {% if form.ciudad.help_text %}
+            <small class="form-text text-muted">{{ form.ciudad.help_text }}</small>
+        {% endif %}
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="{% url 'lista_clientes' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
